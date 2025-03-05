@@ -8,9 +8,10 @@
 #include "serialFactory.h"
 #include "verify.h"
 
-#define RECEIVE_BUFF_SIZE 9
-#define SEND_BUFF_SIZE 26
 
+#define SEND_BUFF_SIZE 26
+#define RECEIVE_FLOAT_NUM 7
+#define RECEIVE_BUFF_SIZE 5+4*RECEIVE_FLOAT_NUM
 namespace hitcrt {
 
 class SerialInfantry : public SerialCom {

@@ -3,9 +3,8 @@
 
 CMakeFiles/serial_test.dir/infantry/serialBase.cpp.o
  /home/yy/serial_test/infantry/serialBase.cpp
- /home/yy/code/Code_on_new_ubuntu/code/serial_test/infantry/serialBase.cpp
  /usr/include/stdc-predef.h
- /home/yy/code/Code_on_new_ubuntu/code/serial_test/infantry/serialBase.h
+ /home/yy/serial_test/infantry/serialBase.h
  /usr/include/c++/11/iostream
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h
@@ -1222,9 +1221,8 @@ CMakeFiles/serial_test.dir/infantry/serialBase.cpp.o
 
 CMakeFiles/serial_test.dir/infantry/serialFactory.cpp.o
  /home/yy/serial_test/infantry/serialFactory.cpp
- /home/yy/code/Code_on_new_ubuntu/code/serial_test/infantry/serialFactory.cpp
  /usr/include/stdc-predef.h
- /home/yy/code/Code_on_new_ubuntu/code/serial_test/infantry/serialFactory.h
+ /home/yy/serial_test/infantry/serialFactory.h
  /usr/include/c++/11/iostream
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h
@@ -2012,7 +2010,7 @@ CMakeFiles/serial_test.dir/infantry/serialFactory.cpp.o
  /usr/include/dirent.h
  /usr/include/x86_64-linux-gnu/bits/dirent.h
  /usr/include/x86_64-linux-gnu/bits/dirent_ext.h
- /home/yy/code/Code_on_new_ubuntu/code/serial_test/infantry/serialBase.h
+ /home/yy/serial_test/infantry/serialBase.h
  /usr/include/boost/asio.hpp
  /usr/include/boost/asio/associated_allocator.hpp
  /usr/include/boost/asio/detail/config.hpp
@@ -2532,14 +2530,13 @@ CMakeFiles/serial_test.dir/infantry/serialFactory.cpp.o
  /usr/include/boost/asio/windows/stream_handle.hpp
  /usr/include/boost/asio/write_at.hpp
  /usr/include/boost/asio/impl/write_at.hpp
- /home/yy/code/Code_on_new_ubuntu/code/serial_test/infantry/serialInfantry.h
- /home/yy/code/Code_on_new_ubuntu/code/serial_test/infantry/verify.h
+ /home/yy/serial_test/infantry/serialInfantry.h
+ /home/yy/serial_test/infantry/verify.h
 
 CMakeFiles/serial_test.dir/infantry/serialInfantry.cpp.o
  /home/yy/serial_test/infantry/serialInfantry.cpp
- /home/yy/code/Code_on_new_ubuntu/code/serial_test/infantry/serialInfantry.cpp
  /usr/include/stdc-predef.h
- /home/yy/code/Code_on_new_ubuntu/code/serial_test/infantry/serialInfantry.h
+ /home/yy/serial_test/infantry/serialInfantry.h
  /usr/include/boost/thread/mutex.hpp
  /usr/include/boost/thread/detail/platform.hpp
  /usr/include/boost/config.hpp
@@ -3313,7 +3310,7 @@ CMakeFiles/serial_test.dir/infantry/serialInfantry.cpp.o
  /usr/include/boost/chrono/ceil.hpp
  /usr/include/boost/thread/pthread/pthread_mutex_scoped_lock.hpp
  /usr/include/boost/thread/pthread/pthread_helpers.hpp
- /home/yy/code/Code_on_new_ubuntu/code/serial_test/infantry/serialBase.h
+ /home/yy/serial_test/infantry/serialBase.h
  /usr/include/c++/11/iostream
  /usr/include/boost/asio.hpp
  /usr/include/boost/asio/associated_allocator.hpp
@@ -3834,7 +3831,7 @@ CMakeFiles/serial_test.dir/infantry/serialInfantry.cpp.o
  /usr/include/boost/asio/windows/stream_handle.hpp
  /usr/include/boost/asio/write_at.hpp
  /usr/include/boost/asio/impl/write_at.hpp
- /home/yy/code/Code_on_new_ubuntu/code/serial_test/infantry/serialFactory.h
+ /home/yy/serial_test/infantry/serialFactory.h
  /usr/include/boost/any.hpp
  /usr/include/boost/type_index.hpp
  /usr/include/boost/type_index/stl_type_index.hpp
@@ -3848,14 +3845,13 @@ CMakeFiles/serial_test.dir/infantry/serialInfantry.cpp.o
  /usr/include/dirent.h
  /usr/include/x86_64-linux-gnu/bits/dirent.h
  /usr/include/x86_64-linux-gnu/bits/dirent_ext.h
- /home/yy/code/Code_on_new_ubuntu/code/serial_test/infantry/verify.h
- /home/yy/code/Code_on_new_ubuntu/code/serial_test/infantry/main.h
+ /home/yy/serial_test/infantry/verify.h
+ /home/yy/serial_test/infantry/main.h
 
 CMakeFiles/serial_test.dir/infantry/verify.cpp.o
  /home/yy/serial_test/infantry/verify.cpp
- /home/yy/code/Code_on_new_ubuntu/code/serial_test/infantry/verify.cpp
  /usr/include/stdc-predef.h
- /home/yy/code/Code_on_new_ubuntu/code/serial_test/infantry/verify.h
+ /home/yy/serial_test/infantry/verify.h
  /usr/include/c++/11/iostream
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h
@@ -4037,7 +4033,6 @@ CMakeFiles/serial_test.dir/infantry/verify.cpp.o
 
 CMakeFiles/serial_test.dir/main.cpp.o
  /home/yy/serial_test/main.cpp
- /home/yy/code/Code_on_new_ubuntu/code/serial_test/main.cpp
  /usr/include/stdc-predef.h
  /usr/include/c++/11/atomic
  /usr/include/c++/11/bits/atomic_base.h
@@ -5236,8 +5231,8 @@ CMakeFiles/serial_test.dir/main.cpp.o
  /usr/include/x86_64-linux-gnu/bits/types/struct_sigstack.h
  /usr/include/x86_64-linux-gnu/bits/sigthread.h
  /usr/include/x86_64-linux-gnu/bits/signal_ext.h
- /home/yy/code/Code_on_new_ubuntu/code/serial_test/infantry/serialInfantry.h
- /home/yy/code/Code_on_new_ubuntu/code/serial_test/infantry/serialBase.h
+ /home/yy/serial_test/infantry/serialInfantry.h
+ /home/yy/serial_test/infantry/serialBase.h
  /usr/include/boost/asio.hpp
  /usr/include/boost/asio/associated_allocator.hpp
  /usr/include/boost/asio/detail/config.hpp
@@ -5720,11 +5715,11 @@ CMakeFiles/serial_test.dir/main.cpp.o
  /usr/include/boost/asio/windows/stream_handle.hpp
  /usr/include/boost/asio/write_at.hpp
  /usr/include/boost/asio/impl/write_at.hpp
- /home/yy/code/Code_on_new_ubuntu/code/serial_test/infantry/serialFactory.h
+ /home/yy/serial_test/infantry/serialFactory.h
  /usr/include/boost/any.hpp
  /usr/include/dirent.h
  /usr/include/x86_64-linux-gnu/bits/dirent.h
  /usr/include/x86_64-linux-gnu/bits/dirent_ext.h
- /home/yy/code/Code_on_new_ubuntu/code/serial_test/infantry/verify.h
- /home/yy/code/Code_on_new_ubuntu/code/serial_test/infantry/serialFactory.h
+ /home/yy/serial_test/infantry/verify.h
+ /home/yy/serial_test/infantry/serialFactory.h
 

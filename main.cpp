@@ -10,13 +10,19 @@
 
 // 原子变量
 std::atomic<int> programIsRunning = 1; 
-static float temp_PitchDegree;
+static float temp_PitchDegree_1;
+static float temp_PitchDegree_2;
+static float temp_datas[RECEIVE_FLOAT_NUM];
+static float sen_datas[RECEIVE_FLOAT_NUM];
 using namespace hitcrt;
 // send_data线程
 void send_data(std::shared_ptr<SerialCom>& serial)
 {
     int aCnt = 1;
     float x = 2.534;
+    float y = 2.534;
+    float z = 12;
+    float w = 3;
     while (programIsRunning)
     {
         if (aCnt >= 1000)
@@ -28,7 +34,15 @@ void send_data(std::shared_ptr<SerialCom>& serial)
         //打包数据和发送，应该在回调函数中进行
         std::vector<boost::any> send_data;      
         std::vector<float> num; //传输的数据(float)
-        num.emplace_back(x);   //传输几个就emplace_back几个，这里只演示单个
+        // num.emplace_back(x);   //传输几个就emplace_back几个，这里只演示单个
+        // num.emplace_back(y);   //传输几个就emplace_back几个，这里只演示单个
+        // num.emplace_back(z);   //传输几个就emplace_back几个，这里只演示单个
+        // num.emplace_back(w);   //传输几个就emplace_back几个，这里只演示单个
+        for (int i = 0; i < RECEIVE_FLOAT_NUM; i++)
+        {
+            num.emplace_back(0.96*i);
+        }
+        
         send_data.emplace_back((unsigned char)1); //暂时没用上，意义为传输长度
         send_data.emplace_back(num);   
         serial->send(send_data);  //发送数据包       
@@ -43,6 +57,7 @@ void receive_data(std::shared_ptr<SerialCom>& serial)
     int bCnt = 1;
     while (programIsRunning)
     {
+        std::cout << "receive_data thread started" << std::endl;
         if (bCnt >= 1000)
         {
             std::cout << "receive_data thread running" << std::endl;
@@ -51,13 +66,22 @@ void receive_data(std::shared_ptr<SerialCom>& serial)
         bCnt++;
         //接收和读取数据，另开线程
         std::vector<boost::any> receive_data;
-        //std::cout << "ready to rec" << std::endl;
-        serial->receive(receive_data);
+        // std::cout << "cnt=" << bCnt << std::endl;
+        serial->receive(receive_data);          
+        // std::cout <<  "received over" << std::endl;
+        // std::vector<boost::any> receive_data;
         auto data = boost::any_cast<std::vector<float>>(receive_data.at(1));
 
         ///前二位为角度信息       
-        temp_PitchDegree = data[0];
-        std::cout << "received temp_PitchDegree=" << temp_PitchDegree << std::endl;
+
+        for (int i = 0; i < RECEIVE_FLOAT_NUM; i++)
+        {
+            temp_datas[i] = data[i];
+        }
+        for (int i = 0; i < RECEIVE_FLOAT_NUM; i++)
+        {
+            std::cout << "received temp_PitchDegree" << i << " = " << temp_datas[i] << std::endl;
+        }
         std::this_thread::sleep_for(std::chrono::milliseconds(1));
     }
     std::cout << "rec_data thread exiting" << std::endl;

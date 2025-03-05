@@ -65,7 +65,16 @@ void SerialInfantry::send(unsigned char send_distance, std::vector<float> num) {
         for (int j = 0; j < 4; j++) buff[i * 4 + 3 + j] = temp.ch[j];
     }
     Append_CRC16_Check_Sum(buff, send_length);  
+
     m_serialBase->send(buff, send_length);
+
+    // print send buff
+            //         std::cout << "send buff contents: ";
+
+            // for (int j = 0; j < send_length; j++) {
+            //         std::cout << std::hex << static_cast<int>(buff[j]) << " ";
+            //     }
+            //     std::cout << std::endl;
 }
 
 
@@ -75,19 +84,21 @@ void SerialInfantry::receive(SerialInfantry::RECEIVE_FLAG& receive_flag, std::ve
         unsigned char buff[100] = {0xff};
         size_t received_length;
         m_serialBase->receive(buff, received_length);
-//
-            //    std::cout << "raw_data----------------------" << std::endl ;
-            //    std::cout << "received_length = " << received_length << std::endl ;
-            //    for(int i=0;i<100;i++)
-            //    {
-            //        std::cout << std::hex << (unsigned int)buff[i] << " " ;
-            //    }
-            //    std::cout << std::endl;
+
+        // std::cout << "raw_data----------------------" << std::endl ;
+        // std::cout << "received_length = " << received_length << std::endl ;
+        // for(int i=0;i<100;i++)
+        // {
+        //     std::cout << std::hex << (unsigned int)buff[i] << " " ;
+        // }
+        // std::cout << std::endl;
         
-        if (decode(buff, received_length, num, receive_flag, RECEIVED_ID, which_gyro)||(programIsRunning == 0)) {
-            //            std::cout << "receive_flag = " << receive_flag << std::endl;
+        if (decode(buff, received_length, num, receive_flag, RECEIVED_ID, which_gyro)||(programIsRunning == 0)) 
+        {
+            // std::cout << "receive_flag = " << receive_flag << std::endl;
             break;
         }
+
     }
 }
 
@@ -101,11 +112,12 @@ bool SerialInfantry::decode(unsigned char* buff, size_t& received_length, std::v
     static bool return_flag;
     static unsigned char temp_received_ID = 0x00;
     return_flag = false;
-    //std::cout << "flag=" << flag << std::endl ;
+    // std::cout << "flag=" << flag << std::endl ;
     for (size_t i = 0; i < received_length; i++) {
         switch (flag) {
             case 1:  /// 报头1
-                //                std::cout << "1" << std::endl;
+                            //    std::cout << "1" << std::endl;
+
                 vec_num.clear();
                 if (FIRST_ONE == buff[i]) {
                     flag = 2;
@@ -114,7 +126,7 @@ bool SerialInfantry::decode(unsigned char* buff, size_t& received_length, std::v
                     flag = 1;
                 break;
             case 2:  /// 报头2
-                //                std::cout << "2" << std::endl;
+                            //    std::cout << "2" << std::endl;
                 if (FIRST_TWO == buff[i]) {
                     flag = 3;
                     tempsavebuff[1] = buff[i];
@@ -127,9 +139,9 @@ bool SerialInfantry::decode(unsigned char* buff, size_t& received_length, std::v
                 }
                 break;
             case 3:  /// 浮点数长度
-                //std::cout << "temp_len=" << temp_num_length<< std::endl;
+                // std::cout << "temp_len=" << temp_num_length<< std::endl;
                 temp_num_length = static_cast<int>(buff[i]);
-                if (temp_num_length == 1) {
+                if (temp_num_length == RECEIVE_FLOAT_NUM) {
                     flag = 4;
                     tempsavebuff[2] = buff[i];
                 }
@@ -138,7 +150,7 @@ bool SerialInfantry::decode(unsigned char* buff, size_t& received_length, std::v
                 float temp;
                 if (decode_num(buff[i], temp)) vec_num.push_back(temp);
                 
-             //   std::cout << " temp ="<<temp << std::endl;
+            //    std::cout << " temp ="<<temp << std::endl;
 
                 if (vec_num.size() == temp_num_length) {
                     flag = 5;
@@ -165,7 +177,7 @@ bool SerialInfantry::decode(unsigned char* buff, size_t& received_length, std::v
                 // std::cout << std::endl;
 
                 if (Verify_CRC16_Check_Sum(tempsavebuff, RECEIVE_BUFF_SIZE)) {
-                    //std::cout << "CRC_OK  "<<std::endl;
+                    // std::cout << "CRC_OK  "<<std::endl;
                     receive_flag = temp_receive_flag;
                     num = vec_num;
                     RECEIVED_ID = temp_received_ID;
