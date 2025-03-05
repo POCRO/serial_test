@@ -1,0 +1,1 @@
+/usr/bin/g++ -fPIC -g -shared -Wl,-soname,libprotocol_driver.so -o ../../../../lib/libprotocol_driver.so CMakeFiles/protocol_driver.dir/serialBase.cpp.o CMakeFiles/protocol_driver.dir/serialFactory.cpp.o CMakeFiles/protocol_driver.dir/serialInfantry.cpp.o CMakeFiles/protocol_driver.dir/verify.cpp.o 

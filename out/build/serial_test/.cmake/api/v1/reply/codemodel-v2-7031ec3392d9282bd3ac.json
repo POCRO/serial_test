@@ -1,0 +1,88 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5.0"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "infantry",
+					"jsonFile" : "directory-infantry-Debug-c6b9d982699c82a6c334.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "infantry",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1
+					],
+					"name" : "serial_test",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 1,
+					"id" : "protocol_driver::@b37a9f3697983c4e76b9",
+					"jsonFile" : "target-protocol_driver-Debug-4abe7ee587fd485dcb15.json",
+					"name" : "protocol_driver",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "serial_test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-serial_test-Debug-c13b840122902eb0537d.json",
+					"name" : "serial_test",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/yy/code/Code_on_new_ubuntu/code/serial_test/out/build/serial_test",
+		"source" : "/home/yy/code/Code_on_new_ubuntu/code/serial_test"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

@@ -1,0 +1,6 @@
+/home/yy/serial_test/build/CMakeFiles/serial_test.dir
+/home/yy/serial_test/build/CMakeFiles/edit_cache.dir
+/home/yy/serial_test/build/CMakeFiles/rebuild_cache.dir
+/home/yy/serial_test/build/infantry/CMakeFiles/protocol_driver.dir
+/home/yy/serial_test/build/infantry/CMakeFiles/edit_cache.dir
+/home/yy/serial_test/build/infantry/CMakeFiles/rebuild_cache.dir
